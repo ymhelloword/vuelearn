@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/vue.js"></script>
+</head>
+<body>
+    <h1>懒加载</h1>
+    <span>在离开焦点后在更新</span>
+    <div class="app">
+        <p>{{message}}</p>
+        <input type="text" v-model.lazy="message">
+        <hr>
+        <h1>填入的必须是数字</h1>
+        <p>{{number}}</p>
+        <input type="text" v-model.number.lazy="number">
+    </div>
+
+
+    <script>
+        var app = new Vue({
+            el:".app",
+            data:{
+                message:"hello-vue",
+                number:0
+            }
+        })
+    </script>
+</body>
+</html>
