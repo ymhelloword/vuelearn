@@ -13,8 +13,22 @@
         <input type="text" v-model.lazy="message">
         <hr>
         <h1>填入的必须是数字</h1>
+        <span>输入的字符必须是数字</span>
         <p>{{number}}</p>
         <input type="text" v-model.number.lazy="number">
+        <hr>
+        <h1>去除前后的空格</h1>
+        <span>如果输入的字符前后有空格，在失却焦点时却掉空格</span>
+        <p>{{message_trim}}</p>
+        <input type="text" v-model.trim="message_trim">
+        <hr>
+        <h1>文本域</h1>
+        <textarea cols="10" rows="10" v-model="message">
+        </textarea>
+        <hr>
+        <h1>多选框</h1>
+        <input type="checkbox" id="isTrue" v-model="isTrue">
+        <label for="isTrue">{{isTrue}}</label>
     </div>
 
 
@@ -23,7 +37,9 @@
             el:".app",
             data:{
                 message:"hello-vue",
-                number:0
+                number:0,
+                'message_trim':'',
+                isTrue:true
             }
         })
     </script>
