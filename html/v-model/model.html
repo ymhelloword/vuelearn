@@ -29,6 +29,22 @@
         <h1>多选框</h1>
         <input type="checkbox" id="isTrue" v-model="isTrue">
         <label for="isTrue">{{isTrue}}</label>
+        <hr>
+        <h1>多选框</h1>
+        <input type="checkbox" id="a"  value="ym" v-model="checkBox">
+        <label for="a">a</label>
+        <input type="checkbox" id="b"   value="12" v-model="checkBox">
+        <label for="b">b</label>
+        <input type="checkbox" id="c"  value="hh" v-model="checkBox">
+        <label for="c">c</label>
+        <p>{{checkBox}}</p>
+        <hr>
+        <h1>单选框</h1>
+        <input type="radio" id="male" value="男" v-model="gender">
+        <label for="male">男</label>
+        <input type="radio" id="female" value="女" v-model="gender">
+        <label for="female">女</label>
+        <p>你选择的是：{{gender}}</p>
     </div>
 
 
@@ -39,7 +55,9 @@
                 message:"hello-vue",
                 number:0,
                 'message_trim':'',
-                isTrue:true
+                isTrue:true,
+                checkBox:[],
+                gender:''
             }
         })
     </script>
