@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/vue.js"></script>
+    <style>
+        .color {
+            color: red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <h1>v-bind绑定属性</h1>
+        <p v-bind:title="message">v-bind</p>
+        <p :class="color">:class绑定属性</p>
+        <p :class="list">:class="list"绑定list class{{list}}</p>
+        <p :style="show">show object属性</p>
+        <p :class="isOk?color:''">isOk</p>
+        <div>
+            <input type="checkbox" id="isOk" v-model="isOk">
+            <label for="isOk">isOk</label>
+        </div>
+    </div>
+<script>
+    var app = new Vue({
+        el:".app",
+        data:{
+            message:"v-bind",
+            color:"color",
+            list:["a1","a2"],
+            show:{
+                color:"red",
+                fontSize:"30px"
+            },
+            isOk:false
+        }
+    })
+</script>
+</body>
+</html>
