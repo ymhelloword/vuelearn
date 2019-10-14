@@ -23,6 +23,10 @@
             <input type="checkbox" id="isOk" v-model="isOk">
             <label for="isOk">isOk</label>
         </div>
+        <hr>
+        <p v-pre>{{message}}原样输出</p>
+        <p v-cloak>v-cloak文档加载完成后再渲染</p>
+        <p v-once>{{isOk}}       v-once只渲染一次</p>
     </div>
 <script>
     var app = new Vue({
