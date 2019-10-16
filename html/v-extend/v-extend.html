@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/vue.js"></script>
+</head>
+<body>
+<h1>extend</h1>
+<p></p>
+<div class="app">
+    <div id="extend"></div>
+    <button @click="add">add</button>
+   <i>通过  var extend = Vue.extend({
+       template:"<p>{{count}}</p>",
+       data:function () {
+       return {
+       count: 10
+       }
+       }
+       })
+       new extend().$mount("#extend");</i>
+</div>
+<script>
+    var extend = Vue.extend({
+        template:"<p>{{count}}</p>",
+        data:function () {
+            return {
+                count: 10
+            }
+        }
+    })
+    new extend().$mount("#extend");
+    var app = new Vue({
+        el:".app",
+        data:{
+            count:1
+        },
+        methods:{
+            add:function () {
+                this.count++;
+            }
+        }
+    })
+</script>
+</body>
+</html>

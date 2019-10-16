@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/vue.js"></script>
+</head>
+<body>
+<h1>directive</h1>
+<p>自定义指令,如ym是指令名,那么指令就是v-ym,而,v-ym="count"是在data中的值</p>
+    <div class="app">
+        <p v-ym="count">{{count}}</p>
+        <button @click="add">add</button>
+    </div>
+    <script>
+        Vue.directive("ym",function (el,binding) {
+           el.style="color:red"
+            console.log(binding.value+"//")
+        });
+        //自定义指令的生命周期
+        Vue.directive("ym",{
+            update:function (el,binding) {
+                console.log("Dfdfd")
+            }
+        })
+        var app = new Vue({
+            el:".app",
+            data:{
+                count:1
+            },
+            methods:{
+                add:function () {
+                    this.count++;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
